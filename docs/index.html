@@ -6,6 +6,21 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <style>
+  :root {
+    --theme-color: #24a9a7;
+    --smartkarma-green: #4db365;
+    --white: #ffffff;
+  }
+  .sidebar {
+    padding-top: 0;
+  }
+  .sidebar h1:first-of-type {
+    background: linear-gradient(160deg, var(--theme-color), var(--smartkarma-green)), linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15));
+    color: var(--white);
+    padding: 10px 0;
+  }
+  </style>
 </head>
 <body>
   <div id="app"></div>

@@ -2,6 +2,11 @@
 Here you find instructions how to deploy all our frontend projects. Yes, even including React Native,
 which is kinda considered as a frontend! 👍
 
+# Create new build for TestFlight
+1. Manage TestFlight builds/users: [iTunes Connect](https://itunesconnect.apple.com/login)
+2. Build is uploaded from Xcode.
+
+
 # Publish Native App to EXPO
 
 To publish your [DEV] or feature-branch to EXPO use this command:
@@ -30,7 +35,7 @@ If needed, (everything done in feature branch)
 
 
 ### CREATE NEW RELEASE
-  use: `skrelease` script in git folder you want to make a release
+  use: `skrelease` script in git folder you want to make a release. [DOWNLOAD SCRIPT](https://gist.github.com/luisliuchao/07e2f32f7fffd1b11a03d25ea9df8031)
 
   ————— OR —————————————————————
 

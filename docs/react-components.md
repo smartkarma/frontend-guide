@@ -2,16 +2,15 @@
 
 Here we will describe how to write Components.
 
-## Component vs PureComponent vs Stateless Functional
+## Component, Pure or Stateless Functional ?
 
-Basically the best is to use always Functional Component. But a lot of times we need to have state for component.
-In that case preferred is **PureComponent**, its much faster and control `shouldComponentUpdate` by default. It's
-checking previous state/props and new ones. If there is no change it will not trigger re-render.
-For normal **Component** whenever we pass new props or change state, but the values are same it will get
-re-rendered. So we need to write our own condition to compare objects of state/props.
+Basically the best is to always start with **Stateless Functional Component**. But a lot of times we need to have state for our component.
+In that case we should use **Pure Component**, it's much faster and control `shouldComponentUpdate` on its own.
+Which prevents unnecessary re-rendering of the component whenever props/state changes with same values.
+Your last option should be normal  **Component**.
 
-* **PureComponent** - preferred/fastest - `compare state and re-render only when state is different`
-* **Stateless** Functional Component - if no state needed
+* **Pure Component** - preferred
+* **Stateless Functional Component** - if no state needed
 * **Component** - slowest
 
 ```js
@@ -37,6 +36,27 @@ export default StatelessComponent;
 }
 ```
 
+## Prop Types
+Another important aspect of your components are property types (aka PropTypes). Every component had to have
+properly implemented propTypes. It makes using component much easier and making less prone to error.
+Basic syntax of propTypes look like this:
+
+```js
+//... import
+import { number, string } from 'prop-types'; // always deconstruct
+
+//... inside your PureComponent/Component
+static propTypes = {
+  itemId: number.isRequired,
+  label: string,
+};
+// for functional we add propTypes into the object/component.
+// As you can see in the functional component example
+```
+
+?> Don't forget to specify `isRequired` properties, which brakes component if not supplied.
+
+!> Beware of using `any, node`, since they are too generic. And making propTypes useless.
 
 ## Refs
 > Avoid using refs for anything that can be done declaratively.
