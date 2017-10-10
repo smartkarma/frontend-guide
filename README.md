@@ -7,7 +7,7 @@ Follow additional information from **Structure** instructions.
 
 1. Clone repo
 2. Install globally **docsify**: `npm i -g docsify`
-3. Run from repo folder: `npm run serve ./docs`
+3. Run from repo folder: `docsify serve ./docs`
 4. Change files and preview docs: `http://localhost:3000`
 
 ## Structure
