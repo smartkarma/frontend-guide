@@ -6,7 +6,7 @@ Follow additional information from **Structure** instructions.
 ## Local development (for more fine control and livereload 🤘)
 
 1. Clone repo
-2. Install globally **docsify**: `npm i -g docsify`
+2. Install globally **docsify**: `npm i -g docsify-cli`
 3. Run from repo folder: `docsify serve ./docs`
 4. Change files and preview docs: `http://localhost:3000`
 
