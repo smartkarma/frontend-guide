@@ -22,9 +22,7 @@ If you have error when run this you can try to close the server window. And run 
 yarn serve --reset-cache
 ```
 
-## Note
-
-If you want to install some native package and it require link you should do `react-native link ${package-name}` do not use `react-native link`.
+?> If you want to install some native package and it require link you should do `react-native link ${package-name}` do not use `react-native link`.
 
 # Release
 
