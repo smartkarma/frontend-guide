@@ -1,51 +1,53 @@
-# Install dependencies 
+## First time setup
 
-```
+```bash
 yarn install
 cd ios
 pod install
 ```
 
-# Develop
+?> Probably you don't have installed cococoa `pod`. To install run: `sudo gem install cocoapods`
 
-You need to make sure `Exception Domains` in `ios/SKNativeApp/Info.plist` value is `localhost`.
+After successful installation of all packages, open XCode and choose this build Scheme `SKNativeAppStaging`
+![](https://cl.ly/0b1B3w3a3n2h/Screen%20Shot%202017-10-12%20at%205.35.03%20PM.png)
 
-Chose Scheme to build `SKNativeAppStaging`.
+## Run development server
 
-```
+```bash
 yarn start
 ```
 
-If you have error when run this you can try to close the server window. And run this command.
+If you are not able to run `yarn start`, please close the window and try this command:
 
-```
+```bash
 yarn serve --reset-cache
 ```
 
-?> If you want to install some native package and it require link you should do `react-native link ${package-name}` do not use `react-native link`.
+!> Never run `react-native link` without specifying package name.
 
-# Release
+## Publish
 
-You need to make sure `Exception Domains` in `ios/SKNativeApp/Info.plist` value is empty ``.
+**Currently we publish to Apple TestFlight.**
 
-Choose Scheme to build `SKNativeAppStaging`.
+1. Remove `localhost` from `<key>NSExceptionDomains</key>` in `ios/SKNativeApp/Info.plist`
+2. Choose Scheme `SKNativeAppStaging`.
+3. Choose Device `Generic iOS Device`.
+4. Increase build number choose `SKNativeApp` and in tab `General` increase `Build` number below `Version`.
 
-Choose Device `Generic iOS Device`.
-
-Increase build number (If you forget this you need to do Archive again) choose `SKNativeApp` and in tab `General` increase `Build` number below `Version`.
-
-Generate `main.jsbundle` this file will contain all of js code and put inside `ios/SKNativeApp/` by this command.
-
-```
+```bash
+# Generate main.jsbundle inside 'ios/SKNativeApp'
 yarn bundle
 ```
 
-After generate `main.jsbundle` add that file to `SKNativeApp` use XCode to Archive an `ipa` file and upload to testflight.
+After that, go to XCode and add `main.jsbundle` to `SKNativeApp` folder.
 
-```
-Product -> Archive
-```
+![](https://cl.ly/120g0V3V1E0b/[16f594fbdd79f450616dc4e595fbfb50]_Image%202017-10-12%20at%205.51.36%20PM.png)
 
-Wait till it done and upload to Testflight.
+Finally build whole app within XCode by going to `Product > Archive`
 
+Build will be uploaded to [iTunes Connect > TestFlight](https://itunesconnect.apple.com).
+It will take few minutes to process build. After that it's needed to accept legal terms for each new build.
 
+?> For those archiving for the first time. Ask someone from tech-team for certificates, which are required.
+
+!> Don't forget to add back `localhost` to `<key>NSExceptionDomains</key>` in `ios/SKNativeApp/Info.plist`
