@@ -74,7 +74,7 @@ export default class ExampleScreen extends PureComponent {
 For normal components, we can dispatch redux action.
 
 ```js
-import { NAVIGATION } from 'constants/action-types';
+import { NAVIGATE } from 'constants/action-types';
 
 //... inside component
 static propTypes = {
@@ -83,7 +83,7 @@ static propTypes = {
 
 onPress = () => {
   this.props.dispatch({
-    type: NAVIGATION,
+    type: NAVIGATE,
     routeName: 'ExampleScreen',
     params: {}, // additional params, for passing data to the screen
   });
