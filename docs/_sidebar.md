@@ -5,9 +5,8 @@
   - [Develop](native-develop.md)
   - [Screen](native-screen.md)
   - [Data](native-data.md)
+  - [Deploying](native-deploy.md)
 
-- Ember 😍
+- Ember
   - [Hello there](ember-intro.md)
-
-- How to
-  - [Deploy](deploy.md)
+  - [Deploying](ember-deploy.md)
