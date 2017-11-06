@@ -30,10 +30,11 @@ Currently does not include guide how to submit app to iTunes Store.
 # Manual deploying
 !> This should be done only in case when you are not able to deploy with Fastlane
 
-1. Remove `localhost` from `<key>NSExceptionDomains</key>` in `ios/SKNativeApp/Info.plist`
-2. Choose Scheme `SKNativeAppStaging`.
-3. Choose Device `Generic iOS Device`.
-4. Increase build number choose `SKNativeApp` and in tab `General` increase `Build` number below `Version`.
+1. **Make sure** you opened **SKNativeApp.xcworkspace**
+2. Remove `localhost` from `<key>NSExceptionDomains</key>` in `ios/SKNativeApp/Info.plist`
+3. Choose Scheme `SKNativeAppStaging`.
+4. Choose Device `Generic iOS Device`.
+5. Increase build number choose `SKNativeApp` and in tab `General` increase `Build` number below `Version`.
 
 ```bash
 # Generate main.jsbundle inside 'ios/SKNativeApp'
