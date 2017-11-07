@@ -80,3 +80,114 @@ If you want to access and `element(by.id('some-id'))`, you need to specify a `te
 
 Therefore, if you use any external library, it would be better we make sure they support `testID`.
 
+## Unit testing (Jest)
+
+Jest [docs](http://facebook.github.io/jest/docs/en/getting-started.html) have everything you need. 
+Here we summarize the most useful features for us. 
+
+To run all tests:
+
+```sh
+yarn test
+```
+
+You can also use `watch` or run only one test instead of several. Examples:
+
+```sh
+yarn test --watch
+yarn test --watch myFile.test.js
+yarn test --watch reducers/__tests__/toast.test.js
+```
+
+### Considerations
+
+#### mockClear and mockReset
+
+You do not need to recreate your mocks. Use [mockClear](http://facebook.github.io/jest/docs/en/mock-function-api.html#mockfnmockclear) 
+or [mockReset](http://facebook.github.io/jest/docs/en/mock-function-api.html#mockfnmockreset) instead (usually in the `beforeEach` hook).
+
+#### More specific expects
+
+Imagine a case where we want to detect that a function has been called. We prefer more specific methods:
+
+```js
+expect(ourFunction).toBeCalled(); // This is true
+expect(ourFunction).toHaveBeenCalledTimes(1); // This is also true but more specific
+```
+
+Check also for parameters if applies:
+
+```js
+expect(ourFunction).toBeCalledWith('banana');
+```
+
+### Testing functions
+
+Pure functions are easy to test. We should aim to have functions that produce the same output for the same input without side effects. Example test:
+
+```js
+import marketCapText from '../market-cap';
+
+test('marketCapText', () => {
+  expect(marketCapText(null, null)).toEqual('All market caps');
+  expect(marketCapText(0, null)).toEqual('All market caps');
+  expect(marketCapText(null, 1)).toEqual('≤ 1 USDm');
+  expect(marketCapText(1, 0)).toEqual('≥ 1 USDm');
+  expect(marketCapText(1, 1)).toEqual('1 USDm');
+  expect(marketCapText(1, 3)).toEqual('1 – 3 USDm');
+});
+```
+
+### Testing reducers
+
+Reducers are just pure functions, so testing them is as easy as:
+
+```js
+it('handles Toast/SHOW_TOAST', () => {
+  const newState = toastReducer(undefined, { type: 'Toast/SHOW_TOAST', ...testToast });
+  expect(newState).toEqual({ toasts: [testToast] });
+});
+```
+
+### Testing components
+
+Components without state are easy to test. We just need to test the render function and its output. We can use
+[Snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html) or a more manual method using 
+[Enzyme](http://airbnb.io/enzyme/).
+
+With Snapshots we can generate the full component tree:
+
+```js
+expect(renderer.create(baseComponent)).toMatchSnapshot();
+```
+
+We can use then [snapshot-diff](https://github.com/jest-community/snapshot-diff) to snap differences:
+
+```js
+expect(baseComponent).toMatchDiffSnapshot(
+  <Timestamp format={'YYYY-MM'} value={'2017-10-26T17:31:06.862+08:00'} />,
+  { contextLines: 0 }
+);
+```
+
+With Snapshots you will generate `.snap` files which should be also committed and reviewed.
+
+With Enzyme, it takes some more manual work:
+
+```js
+import { shallow } from 'enzyme';
+
+const wrapper = shallow(baseComponent);
+expect(
+  wrapper
+    .find(FontAwesome)
+    // Quite nested
+    .dive()
+    .dive()
+    .text()
+).toEqual('');
+expect(wrapper.contains('26 Oct 2017 11:31')).toBe(true);
+```
+
+However, Snapshots and Enzyme can be used together. Actually, we need Enzyme to interact with the component
+(clicking a button, change state, change props...). Refer to [Enzyme api docs](http://airbnb.io/enzyme/docs/api/).
