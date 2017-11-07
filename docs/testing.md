@@ -59,6 +59,12 @@ Run e2e test using:
 yarn test:e2e
 ```
 
+By default the app is removed, reinstalled and launched before each run. Starting fresh is critical in CI but in dev you might be able to save time between test runs and reuse the app that was previously installed in the simulator. To do so use the reuse flag and run your tests like this:
+
+```sh
+yarn test:e2e --reuse
+```
+
 ### Write e2e tests
 
 Here are all docs you need: [API Reference](https://github.com/wix/detox/blob/master/docs/README.md#api-reference). Example test:
