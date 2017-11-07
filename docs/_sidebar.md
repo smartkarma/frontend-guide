@@ -5,6 +5,7 @@
   - [Develop](native-develop.md)
   - [Screen](native-screen.md)
   - [Data](native-data.md)
+  - [Testing](testing.md)
   - [Deploying](native-deploy.md)
 
 - Ember
