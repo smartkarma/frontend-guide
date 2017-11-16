@@ -11,6 +11,9 @@ pod install
 After successful installation of all packages, open XCode and choose this build Scheme `SKNativeAppStaging`
 ![](https://cl.ly/0b1B3w3a3n2h/Screen%20Shot%202017-10-12%20at%205.35.03%20PM.png)
 
+
+!> After installing all dependencies, duplicate the `.env.example` file to `.env.staging`. Otherwise all network request will fail.
+
 ## Run development server
 
 ```bash
