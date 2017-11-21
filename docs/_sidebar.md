@@ -7,6 +7,7 @@
   - [Data](native-data.md)
   - [Testing](testing.md)
   - [Deploying](native-deploy.md)
+  - [Upgrading](native-upgrading.md)
 
 - Ember
   - [Hello there](ember-intro.md)
