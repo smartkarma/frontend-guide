@@ -4,9 +4,9 @@ Here we will describe how to write Components.
 
 ## Component, Pure or Stateless Functional ?
 
-Basically the best is to always start with **Stateless Functional Component**. But a lot of times we need to have state for our component.
+Basically the best is to always start with **Stateless Functional Component**. But a lot of times we need state for our component.
 In that case we should use **Pure Component**, it's much faster and control `shouldComponentUpdate` on its own.
-Which prevents unnecessary re-rendering of the component whenever props/state changes with same values.
+It prevents unnecessary re-rendering of the component whenever props/state changes with same values.
 Your last option should be normal  **Component**.
 
 * **Pure Component** - preferred
@@ -37,27 +37,60 @@ export default StatelessComponent;
 ```
 
 ## Prop Types
-Another important aspect of your components are property types (aka PropTypes). Every component had to have
-properly implemented propTypes. It makes using component much easier and making less prone to error.
-Basic syntax of propTypes look like this:
+`prop-types` were deprecated in favour of **Flow**.
+---
+More examples and guide can be found on official [documentation for Flow](https://flow.org/en/docs/). Especially useful is part focused on [React Components](https://flow.org/en/docs/react/components/).
+
+Example of `Props` written with Flow.
+
 
 ```js
-//... import
-import { number, string } from 'prop-types'; // always deconstruct
-
-//... inside your PureComponent/Component
-static propTypes = {
-  itemId: number.isRequired,
-  label: string,
+type Props = {
+  position: Animated.Value,
+  jumpToIndex: (index: number) => mixed,
+  getLabel: (scene: *) => string,
+  renderIcon: (scene: *) => React.Element<any>,
+  inactiveTintColor: string,
+  tabStyle?: Style,
 };
-// for functional we add propTypes into the object/component.
-// As you can see in the functional component example
+
+type State = {
+  isPostOpen: boolean,
+  animate: Animated.Value,
+};
+
+export default class TabBar extends React.Component<Props, State> {
+// rest of component code...
 ```
 
-?> Don't forget to specify `isRequired` properties, which brakes component if not supplied.
-
-!> Beware of using `any, node`, since they are too generic. And making propTypes useless.
+?> If there is few props, we can use shorthand: `Component<{ inactiveTintColor: string }>`
 
 ## Refs
 > Avoid using refs for anything that can be done declaratively.
 For example, instead of exposing `open()` and `close()` methods on a Dialog component, pass an `isOpen` prop to it.
+
+## Props
+Properties of component.
+Whenever we can, we should combine related properties to object. Otherwise we endup with huge ammount of props in root level.
+Good example is this:
+```js
+type Props = {
+  addLabel: string,
+  addOnPress: Function,
+  addIcon: string,
+  label: string,
+  onPress: Function,
+}
+```
+we can rewrite related props like this:
+```js
+type Props = {
+  add: {
+    label: string,
+    onPress: Function,
+    icon: string,
+  },
+  label: string,
+  onPress: Function,
+}
+```
