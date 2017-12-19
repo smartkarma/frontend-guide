@@ -49,7 +49,10 @@ static navigationOptions = ({ navigation }) => {
 ```
 
 ## Navigate to Screen
-Navigation is achieved with `navigation` property, which is available only in `screen` components.
+There are two different ways to use navigation. Easiest way is inside screen component.
+
+### Screen component
+Navigation is achieved with `navigation` property.
 
 ```js
 // skipped All imports...
@@ -71,7 +74,35 @@ export default class ExampleScreen extends PureComponent {
 }
 ```
 
-For normal components, we can dispatch redux action.
+### Components
+In normal component, we don't have available `navigation`. There are two ways to perform navigation.
+ 1. - use HOC `@withNavigation` (recommended)
+ 2. - dispatch redux action `NAVIGATE`
+ 
+ 
+#### withNavigation
+
+Use as decorator or wrap componet in separate export.
+
+```js
+import { withNavigation } from 'react-navigation';
+
+@withNavigation
+export default class MyComponent extends React.PureComponent {
+  this.props.navigation.navigate(
+    'ExampleScreen', 
+    {
+      myParam: 'hello',
+    },
+   );
+}
+
+```
+
+
+#### dispatch action
+
+Alternative way to navigate. The only disadvantage is that syntax is different and might be consufins when using `withNavigation` and dispatch action `NAVIGATE`.
 
 ```js
 import { NAVIGATE } from 'constants/action-types';
@@ -85,7 +116,10 @@ onPress = () => {
   this.props.dispatch({
     type: NAVIGATE,
     routeName: 'ExampleScreen',
-    params: {}, // additional params, for passing data to the screen
+    // accessed via: navigation.state.params
+    params: {
+      myParam: 'hello',
+    },
   });
 }
 ```
