@@ -1,12 +1,23 @@
 ## First time setup
 
+### 1. install npm packages
+in root folder, run:
 ```bash
-yarn install
-cd ios
+yarn
+```
+
+### 2. install cocoapods
+go to `ios` folder and run:
+```bash
+sudo gem install cocoapods
 pod install
 ```
 
-?> Probably you don't have installed cococoa `pod`. To install run: `sudo gem install cocoapods`
+### 3. install fastlane
+```bash
+sudo gem install bundle
+bundle install
+```
 
 After successful installation of all packages, open XCode and choose this build Scheme `SKNativeAppStaging`
 ![](https://cl.ly/0b1B3w3a3n2h/Screen%20Shot%202017-10-12%20at%205.35.03%20PM.png)
