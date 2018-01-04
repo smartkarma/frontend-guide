@@ -1,14 +1,25 @@
 # Publish Ember App
 
-## Preparation
+## Requirements
 
-* public key setup by your teammate in server
-* `.env.deploy.build` settings ready from your teammate
+* have your public key (mostly `id_rsa.pub`) at:
+  * nimbus.smartkarma.com
+  * stratus.smartkarma.com
+* properly filled `.env` files:
+  * `.env.deploy.production`
+  * `.env.deploy.staging`
+  * `.env.deploy.build`
 
 ## Deploy
 
-!> Make sure `sk-common` is at the master branch with the same version number in `package.json`
+### Staging or Build
 
-1. checkout to master [only when manualy released]
-2. run: `ember deploy build --activate` [environment could be `staging` or `production`]
-3. update the **frontend update** in the foundry if necessary
+Just run `ember deploy build|staging --activate`
+
+### Production
+
+!> Only run from `master` branch, after finished GIT Flow Release
+
+1. Check if web is working properly on your localhost
+2. Run: `ember deploy production --activate`
+3. If u introducing new changes, please fill the [frontend updates](https://foundry.smartkarma.com/frontend-updates)

@@ -1,5 +1,41 @@
 # Introduction to our Ember platform
 
-* [Smartkarma](https://www.smartkarma.com) (github repo: **smartkarma-web**) is the main platform.
-* [Foundry](https://www.smartkarma.com) (github repo: **sk-foundry**) is the content management site for internal use.
-* **sk-common** is the repo hosting common components, utilities, helpers, mixins shared by sk-foundry and smartkarma-web
+The whole Smartkarma Ember ecosystem consist of those projects:
+
+
+### [smartkarma.com](https://www.smartkarma.com)
+
+  > Main project, called platform, web
+
+* Repository: [smartkarma-web](https://github.com/smartkarma/smartkarma-web)
+* Domains:
+  * PRODUCTION -> `www.smartkarma.com`
+  * STAGING -> `s.smartkarma.com` | `sk-web-staging.smartkarma.com`
+  * BUILD -> `b.smartkarma.com` | `sk-web-build.smartkarma.com`
+
+
+### [foundry.smartkarma.com](https://foundry.smartkarma.com)
+
+> Platform administration, statistics viewing, content management. **Only internal users have access**
+
+* Repository: [sk-foundry](https://github.com/smartkarma/sk-foundry)
+* Domains:
+  * PRODUCTION -> `foundry.smartkarma.com`
+  * STAGING -> `fs.smartkarma.com` | `sk-foundry-staging.smartkarma.com`
+  * BUILD -> `fb.smartkarma.com` | `sk-foundry-build.smartkarma.com`
+
+
+### [smartkarma.com/home](https://www.smartkarma.com/home)
+> Public/Landing page. For non-logged users this is the web when they access `smartkarma.com`. For logged-in users, the same page is access under `smartkarma.com/home`.
+
+?> This is running/using on Ember Fastboot
+
+* Repository: [sk-public](https://github.com/smartkarma/sk-public)
+
+
+## Shared internal libraries
+
+### sk-common
+> includes common components, utilities, helpers, mixins shared by: **sk-foundry** and **smartkarma-web**
+
+* Repository: [sk-common](https://github.com/smartkarma/sk-common)

@@ -1,53 +1,36 @@
 # Development Process
 
-## Preparation
+## Dependencies
 
 * git
+* nvm
 * yarn
 * bower
-* nvm
 * watchman
+* ember-cli
 
-### Recommendation
+## One time setup
 
-* sourcetree / gitkraken
-* iterm2
-* oh-my-zsh
+1. Make sure u have all those repo cloned: `smartkarma-web, sk-foundry, sk-common, sk-public`.
+2. `nvm use` (make sure u always use correct node version with `node -v`)
+2. `yarn link` inside `sk-common` folder.
+3. `yarn link sk-common` in `smartkarma-web, sk-foundry` folders.
+4. `yarn && bower install` in all 4 repo mentioned above.
 
-## Start the server
 
-### sk-common
+## Start local server
 
+> Works for: smartkarma-web, sk-foundry
+
+To run a local server for *smartkarm-web*, *sk-foundry* use following command:
 ```bash
-nvm use
-yarn
-bower install
-yarn link
+yarn staging-proxy
 ```
+?> U can also use: `build-proxy` to use BUILD API.
 
-### smartkarma-web
+* **smartkarma-web** will be available at: [localhost:4200](http://localhost:4200)
+* **sk-foundry** will be available at: [localhost:4200](http://localhost:4200)
 
-```bash
-nvm use
-yarn
-bower install
-yarn link sk-common
-npm run staging-proxy
-```
-
-open the browser tab and go to **localhost:4200**
-
-### sk-foundry
-
-```bash
-nvm use
-yarn
-bower install
-yarn link sk-common
-npm run staging-proxy
-```
-
-open the browser tab and go to **localhost:4201**
 
 ## Feature development
 
@@ -93,3 +76,24 @@ use: `skrelease` script in git folder you want to make a release. [DOWNLOAD SCRI
    * follow the [version semantic](https://semver.org/)
 3. commit changes. Commit message: `Release vX.X.X`
 4. finish release
+
+## FAQ 😭
+If something went wrong, please read those 🤗
+
+### Yarn fails with sk-common
+
+There are two most common issues:
+1. Missing login for Github in terminal. Try `git fetch` inside terminal. If it works u can continue to 2nd.
+  * after running command, GitHub will ask for username and password. Type your username, **but** for password, you need
+  to use token (in case you use 2Factor Auth), which u can get [here](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+2. Not accepted Github RSA fingerprint to known-hosts, to get the dialog run this: `git ls-remote --tags --heads ssh://git@github.com/smartkarma/sk-common`
+  * after that, just type `yes` to add fingerprint.
+
+### How to get my SSH key
+
+* Your key should be locate inside `cd ~/.ssh`, if that's not the case, please generate one for yourself with this command: `ssh-keygen -t rsa`.
+* Quickly copy your public key: `cat ~/.ssh/id_rsa.pub | pbcopy`
+
+### Deploy failed with auth error
+
+In some cases, you might not have access to `sk-stratus` or `sk-nimbus` servers. Please verify u had a access by SSH those servers.
