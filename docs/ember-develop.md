@@ -65,17 +65,18 @@ yarn staging-proxy
 
 ## Release
 
-!> **don't forget `sk-common` to be on `master`** + pull develop & master branches.
+!> **don't forget `sk-common` to be on `master`** + pull `develop` & `master` branches
 
 use: `skrelease` script in git folder you want to make a release. [DOWNLOAD SCRIPT](https://gist.github.com/luisliuchao/07e2f32f7fffd1b11a03d25ea9df8031)
 
 ————— OR —————————————————————
 
-1. start release on develop branch
+1. start a new release branch with an incremented version name using `vX.X.X` format
+  * Eg. `v1.0.0` to `v1.0.1`
+  * follow the [version semantic](https://semver.org/)
 2. change version number in `package.json`
-   * follow the [version semantic](https://semver.org/)
 3. commit changes. Commit message: `Release vX.X.X`
-4. finish release
+4. finish release and [deploy](ember-deploy?id=deploy)
 
 ## FAQ 😭
 If something went wrong, please read those 🤗
