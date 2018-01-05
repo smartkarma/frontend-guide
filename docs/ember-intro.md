@@ -1,17 +1,22 @@
 # Introduction to our Ember platform
 
-The whole Smartkarma Ember ecosystem consist of those projects:
+The whole Smartkarma Ember ecosystem consists of these projects:
 
 
 ### [smartkarma.com](https://www.smartkarma.com)
 
-  > Main project, called platform, web
+> Main project, called platform, web
 
 * Repository: [smartkarma-web](https://github.com/smartkarma/smartkarma-web)
 * Domains:
-  * PRODUCTION -> `www.smartkarma.com`
-  * STAGING -> `s.smartkarma.com` | `sk-web-staging.smartkarma.com`
-  * BUILD -> `b.smartkarma.com` | `sk-web-build.smartkarma.com`
+  * PRODUCTION
+    * `www.smartkarma.com`
+  * STAGING
+    * `s.smartkarma.com`
+    * `sk-web-staging.smartkarma.com`
+  * BUILD
+    * `b.smartkarma.com`
+    * `sk-web-build.smartkarma.com`
 
 
 ### [foundry.smartkarma.com](https://foundry.smartkarma.com)
@@ -20,13 +25,19 @@ The whole Smartkarma Ember ecosystem consist of those projects:
 
 * Repository: [sk-foundry](https://github.com/smartkarma/sk-foundry)
 * Domains:
-  * PRODUCTION -> `foundry.smartkarma.com`
-  * STAGING -> `fs.smartkarma.com` | `sk-foundry-staging.smartkarma.com`
-  * BUILD -> `fb.smartkarma.com` | `sk-foundry-build.smartkarma.com`
+  * PRODUCTION
+    * `foundry.smartkarma.com`
+  * STAGING
+    * `fs.smartkarma.com`
+    * `sk-foundry-staging.smartkarma.com`
+  * BUILD
+    * `fb.smartkarma.com`
+    * `sk-foundry-build.smartkarma.com`
 
 
 ### [smartkarma.com/home](https://www.smartkarma.com/home)
-> Public/Landing page. For non-logged users this is the web when they access `smartkarma.com`. For logged-in users, the same page is access under `smartkarma.com/home`.
+
+> Public/Landing page. For non-logged users, this is the web when they access `smartkarma.com`. For logged-in users, the same page is accessed under `smartkarma.com/home`.
 
 ?> This is running/using on Ember Fastboot
 
@@ -36,6 +47,7 @@ The whole Smartkarma Ember ecosystem consist of those projects:
 ## Shared internal libraries
 
 ### sk-common
-> includes common components, utilities, helpers, mixins shared by: **sk-foundry** and **smartkarma-web**
+
+> Includes common components, utilities, helpers, mixins shared by: **sk-foundry** and **smartkarma-web**
 
 * Repository: [sk-common](https://github.com/smartkarma/sk-common)
