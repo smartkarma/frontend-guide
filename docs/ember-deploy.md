@@ -16,6 +16,12 @@
 
 Just run `ember deploy build|staging --activate`
 
+### List past revisions
+`ember deploy:list build|staging`
+
+### Activate past revisions
+`ember deploy:activate build|staging --revision=<REVISION>`
+
 ### Production
 
 !> Only run from `master` branch, after finished GIT Flow Release
