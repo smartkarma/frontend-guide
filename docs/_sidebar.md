@@ -12,8 +12,12 @@
   * [Upgrading](native-upgrading.md)
 
 * Ember
+
   * [Introduction](ember-intro.md)
   * [Develop](ember-develop.md)
   * [Deploy](ember-deploy.md)
+  * [Resources](ember-resources.md)
+
 * Pull Request
+
   * [Requirement](pull-request.md)
