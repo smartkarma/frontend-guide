@@ -15,6 +15,7 @@
 
   * [Introduction](ember-intro.md)
   * [Develop](ember-develop.md)
+  * [Testing](ember-testing.md)
   * [Deploy](ember-deploy.md)
   * [Resources](ember-resources.md)
 
