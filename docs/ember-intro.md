@@ -48,6 +48,6 @@ The whole Smartkarma Ember ecosystem consists of these projects:
 
 ### sk-common
 
-> Includes common components, utilities, helpers, mixins shared by: **sk-foundry** and **smartkarma-web**
+> Includes common components, utilities, helpers, mixins used by: **sk-foundry** and **smartkarma-web**
 
 * Repository: [sk-common](https://github.com/smartkarma/sk-common)
