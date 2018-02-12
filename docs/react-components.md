@@ -94,3 +94,17 @@ type Props = {
   onPress: Function,
 }
 ```
+
+## Exporting
+For components which we test and we apply HOC to them, we should use this way of exporting:
+```js
+class FollowButtonComponent extends React.PureComponent {}
+
+export { FollowButtonComponent as PureFollowButton };
+const FollowButton = connect((state, props) => ({
+  canFollow: canFollowSelector(state, props),
+}))(FollowButtonComponent);
+export default FollowButton;
+```
+
+
