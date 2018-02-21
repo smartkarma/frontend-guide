@@ -5,30 +5,16 @@ Currently does not include guide how to submit app to iTunes Store.
 
 ---
 
-# Deploying with Fastlane
-> This manual assumes that you already gone through first time installation on [sk-native-app repo](https://github.com/smartkarma/sk-native-app#install-fastlane-and-dependencies)
+# Bitrise.io
+> CI tool that takes care of building and distributing app to TestFlight.
 
-?> Make sure you finished all feature branches and your master&develop is up to date.
-
-1. Create new **release** with GitFlow
-2. Increase app version in those files:
-  - `package.json`
-  - `ios/SKNativeApp/Info.plist` - version is in this key `<CFBundleShortVersionString>`
-  - do the same for `SKNativeTests` folder as well.
-3. run `yarn fastlane:beta` -- continue after fastlane is finished
-4. commit all changed files with this message: `Release vX.X.X`
-5. Finish **release** with GitFlow
-
-!> Please always write notes about changes you are publishing/deploying
-
-## Write changelog & Github release
-1. Go to iTunes Connect and click on your build, write description
-2. Go to Github repo, click on releases and choose your version tag and create new release.
+App is build from `develop` branch every day at **8pm**.
+Link to install latest app version, can be found in Slack `nativeapp` channel.
 
 ---
 
 # Manual deploying
-!> This should be done only in case when you are not able to deploy with Fastlane
+!> This should be done used only as Emergency situation.
 
 1. **Make sure** you opened **SKNativeApp.xcworkspace**
 2. Remove `localhost` from `<key>NSExceptionDomains</key>` in `ios/SKNativeApp/Info.plist`
