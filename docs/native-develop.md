@@ -1,7 +1,13 @@
 ## First time setup
 
+### Prerequisites
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/)
+* [Yarn^1.0](https://yarnpkg.com/)
+* XCode - install through App Store
+
 ### 1. install npm packages
-in root folder, run:
+in `root` folder, run:
 ```bash
 yarn
 ```
@@ -13,17 +19,12 @@ sudo gem install cocoapods
 pod install
 ```
 
-### 3. install fastlane
-```bash
-sudo gem install bundle
-bundle install
-```
 
 After successful installation of all packages, open XCode and choose this build Scheme `SKNativeAppStaging`
 ![](https://cl.ly/0b1B3w3a3n2h/Screen%20Shot%202017-10-12%20at%205.35.03%20PM.png)
 
 
-!> After installing all dependencies, duplicate the `.env.example` file to `.env.staging`. Otherwise all network request will fail.
+!> After installing all dependencies, copy the `.env.example` file to `.env.staging`. Otherwise all network request will fail.
 
 ## Run development server
 
@@ -31,27 +32,21 @@ After successful installation of all packages, open XCode and choose this build 
 yarn start
 ```
 
-If you are not able to run `yarn start`, please close the window and try this command:
+?> Most of the time, packager from `yarn start` will fail, so `yarn serve` is always needed
 
 ```bash
-yarn serve --reset-cache
+yarn serve
 ```
-
-!> Never run `react-native link` without specifying package name.
 
 ## Debugging
 
 #### Useful shortcuts
-* Open debug on simulator by `command + D`
-* Toggle slow animation with `command + T`
+* Open debug on simulator by `CMD + D`
+* Toggle slow animation with `CMD + T`
 
-For better debugging experience, we recommend to use React Native Debugger:
-* Install [react-native-debugger](https://github.com/jhen0409/react-native-debugger) with command `brew update && brew cask install react-native-debugger`
+#### React Native Debugger
+Essential tool, to debug: **Redux, React code, JS/Network debugging**
+* Install [react-native-debugger](https://github.com/jhen0409/react-native-debugger) with command
+`brew update && brew cask install react-native-debugger`
 * Enable Remote Debugging (this will automatically open react-native-debugger)
 
-#### Debug network
-All network request are logged to console, but for more refine control over network, please install **Reactotron**.
-* Install [Reactotron](https://github.com/infinitered/reactotron)
-
-Quick introduction to debugging of React Native apps:
-* https://medium.com/reactnativeacademy/debugging-react-native-applications-6bff3f28c375
