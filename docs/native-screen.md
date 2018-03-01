@@ -75,29 +75,11 @@ export default class ExampleScreen extends PureComponent {
 ```
 
 ### Components
-In normal component, we don't have available `navigation`. There are two ways to perform navigation.
- 1. - use HOC `@withNavigation` (recommended)
+!> Don't use `withNavigation`, since it cause incosistent state (might be fixed in future).
+
+In normal component, we don't have available `navigation`.
+ 1. - ~~use HOC `@withNavigation` (recommended)~~
  2. - dispatch redux action `NAVIGATE`
- 
- 
-#### withNavigation
-
-Use as decorator or wrap componet in separate export.
-
-```js
-import { withNavigation } from 'react-navigation';
-
-@withNavigation
-export default class MyComponent extends React.PureComponent {
-  this.props.navigation.navigate(
-    'ExampleScreen', 
-    {
-      myParam: 'hello',
-    },
-   );
-}
-
-```
 
 
 #### dispatch action
