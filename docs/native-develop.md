@@ -19,8 +19,10 @@ sudo gem install cocoapods
 pod install
 ```
 
-
-After successful installation of all packages, open XCode and choose this build Scheme `SKNativeAppStaging`
+### 3. setup XCode
+- launch **XCode**
+- open `ios/SKNativeApp.xcworkspace`
+- choose this as a active  scheme `SKNativeAppStaging`
 ![](https://cl.ly/0b1B3w3a3n2h/Screen%20Shot%202017-10-12%20at%205.35.03%20PM.png)
 
 
