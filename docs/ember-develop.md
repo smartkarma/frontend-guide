@@ -1,4 +1,4 @@
-# Development Process
+# Development Process 💯
 
 ## Dependencies
 
@@ -11,90 +11,94 @@
 
 ## One time setup
 
-1. Make sure u have all those repo cloned: `smartkarma-web, sk-foundry, sk-common, sk-public`.
-2. `nvm use` (make sure u always use correct node version with `node -v`)
-2. `yarn link` inside `sk-common` folder.
-3. `yarn link sk-common` in `smartkarma-web, sk-foundry` folders.
-4. `yarn && bower install` in all 4 repo mentioned above.
-
+1. Make sure you've the following repos cloned: `smartkarma-web`, `sk-foundry`, `sk-common`, `sk-public`
+2. `nvm use` (make sure that you're using the correct node version with `node -v`)
+2. `yarn link` inside `sk-common` folder
+3. `yarn link sk-common` in `smartkarma-web` and `sk-foundry` folders
+4. `yarn && bower install` in all 4 repos
 
 ## Start local server
 
-> Works for: smartkarma-web, sk-foundry
+> For `smartkarma-web` & `sk-foundry`
 
-To run a local server for *smartkarm-web*, *sk-foundry* use following command:
+To run a local server for `smartkarma-web` or `sk-foundry` use following command:
 ```bash
 yarn staging-proxy
 ```
-?> U can also use: `build-proxy` to use BUILD API.
+?> You can also use: `yarn build-proxy` to connect to the `build` API
 
-* **smartkarma-web** will be available at: [localhost:4200](http://localhost:4200)
-* **sk-foundry** will be available at: [localhost:4200](http://localhost:4200)
-
+* `smartkarma-web` will be available at: [localhost:4200](http://localhost:4200)
+* `sk-foundry` will be available at: [localhost:4200](http://localhost:4200)
 
 ## Feature development
 
 ### Start feature
 
-1. start the feature branch with name followed the convention as `[pivot tracker ticker id]-[feature name separated with -]`
-2. if there's any change in `sk-common`, create a new feature in `sk-common` with the same name
+1. Start a feature branch and name it using the following naming convention: `[pivotal tracker ticker id]-[feature name separated with -]`
+  * Eg: `146673807-qva-analytics-report`
+2. If there's any change in `sk-common`, create a new feature in `sk-common` with the same name
 
 ### Finish feature branch
 
-!> Run `ember test` and make sure there is no test error before finishing any feature branch
+!> Run `ember test` and make sure there's no test error before finishing the feature branch
 
 !> Rebase to the latest `develop` branch before finishing the branch
 
-!> Remember to check **browser compatibility** before finish branch related with UI
+!> Remember to check **browser compatibility** before finishing UI related branch
 
-!> check whether the change in `sk-common` would affect other repo or not. If yes, update the other repo as well!
+!> Check whether or not changes in `sk-common` affect other repos. If yes, update the other repo as well!
 
-1. if there's any change in `sk-common`, [make a release](ember-develop?id=create-new-release) in `sk-common` first
-2. change `sk-common` version number in `package.json`
-3. run `yarn`, to change the `.lock` file.
-4. commit message: `use sk-common vX.X.X`
-5. finish feature branch [this will merge branch to develop]
+1. If there's any change in `sk-common`, [make a release](ember-develop?id=create-new-release) in `sk-common` first
+2. Change `sk-common` version number in `package.json`
+3. Run `yarn` to change the `.lock` file
+4. Commit message: `use sk-common vX.X.X`
+5. Finish the feature branch. This will **merge** the branch to `develop`
 
 ## Hotfix
 
-?> Releasing hotfix branch won't include the unreleased develop branch content
+?> Releasing a hotfix branch will not include unreleased `develop` branch content
 
-1. start a new hotfix branch with version number from `v1.0.0` to `v1.0.1` [increment the last digit]
-2. commit the change
-3. finish the hotfix and [deploy](ember-deploy?id=deploy)
+1. Start a new hotfix branch with the incremented version number as the name
+  * Eg: `v1.0.0` to `v1.0.1` [increment the last digit]
+2. Commit the change
+3. Finish the hotfix and [deploy](ember-deploy?id=deploy)
 
 ## Release
 
-!> **don't forget `sk-common` to be on `master`** + pull `develop` & `master` branches
+!> Don't forget `sk-common` to be on `master` & pull `develop` & `master` branches
 
-use: `skrelease` script in git folder you want to make a release. [DOWNLOAD SCRIPT](https://gist.github.com/luisliuchao/07e2f32f7fffd1b11a03d25ea9df8031)
+You can make a release by either using a script or doing it manually
 
-————— OR —————————————————————
+### Using a script
 
-1. start a new release branch with an incremented version name using `vX.X.X` format
+Use `skrelease` script in the folder you where want to make the release. Click [here](https://gist.github.com/luisliuchao/07e2f32f7fffd1b11a03d25ea9df8031) to download the script
+
+### Manual release
+
+1. Start a new release branch with the incremented version as the name using `vX.X.X` format
   * Eg. `v1.0.0` to `v1.0.1`
-  * follow the [version semantic](https://semver.org/)
-2. change version number in `package.json`
-3. commit changes. Commit message: `Release vX.X.X`
-4. finish release and [deploy](ember-deploy?id=deploy)
+  * Follow the [version semantic](https://semver.org/)
+2. Change the version number in `package.json`
+3. Commit changes. Commit message: `Release vX.X.X`
+4. Finish release and [deploy](ember-deploy?id=deploy)
 
-## FAQ 😭
-If something went wrong, please read those 🤗
+## FAQ
+
+If something went wrong, please read the following tips
 
 ### Yarn fails with sk-common
 
-There are two most common issues:
-1. Missing login for Github in terminal. Try `git fetch` inside terminal. If it works u can continue to 2nd.
-  * after running command, GitHub will ask for username and password. Type your username, **but** for password, you need
-  to use token (in case you use 2Factor Auth), which u can get [here](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
-2. Not accepted Github RSA fingerprint to known-hosts, to get the dialog run this: `git ls-remote --tags --heads ssh://git@github.com/smartkarma/sk-common`
-  * after that, just type `yes` to add fingerprint.
+Two most common issues:
+1. Missing login for Github in terminal. Try `git fetch` inside the terminal. If it works you can continue to 2<sup>nd</sup> step
+  * After running the command, GitHub will ask for your username and password. Type your username, **but** for password, you need to use a token (in case you use 2Factor Auth), which you can get [here](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+2. Not accepted Github RSA fingerprint to known hosts, to get the dialog run this: `git ls-remote --tags --heads ssh://git@github.com/smartkarma/sk-common`
+  * After that, just type `yes` to add the fingerprint
 
 ### How to get my SSH key
 
-* Your key should be locate inside `cd ~/.ssh`, if that's not the case, please generate one for yourself with this command: `ssh-keygen -t rsa`.
-* Quickly copy your public key: `cat ~/.ssh/id_rsa.pub | pbcopy`
+* Your key should be located inside `cd ~/.ssh`, if that's not the case, please generate one for yourself with this command: `ssh-keygen -t rsa`
+* Copy your public key: `cat ~/.ssh/id_rsa.pub | pbcopy`
 
 ### Deploy failed with auth error
 
-In some cases, you might not have access to `sk-stratus` or `sk-nimbus` servers. Please verify u had a access by SSH those servers.
+In some cases, you might not have access to `sk-stratus` or `sk-nimbus` servers. Please verify you have access by SSH those servers
