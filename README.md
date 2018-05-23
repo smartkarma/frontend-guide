@@ -1,10 +1,10 @@
 ## Beginner: How to contribute
-> Follow additional instructions in **Structure**.
+> Follow additional instructions in **Structure**
 
-Just edit/add new `.md` files to the root in GitHub directly to `master` branch.
+Just edit/add new `.md` files to the root in GitHub directly to `master` branch
 
 ## Advanced: How to contribute
-> Follow additional instructions in **Structure**.
+> Follow additional instructions in **Structure**
 
 For easy preview of changes and live-reload 🤘
 1. Clone repo
@@ -14,11 +14,11 @@ For easy preview of changes and live-reload 🤘
 
 ## Structure
 
-- Add new pages to the root folder only. Add project prefix to the filename. eg: `native-something.md`.
-- Each new page has to be added in: `_sidebar.md`.
+- Add new pages to the root folder only. Add project prefix to the filename. eg: `native-something.md`
+- Each new page has to be added in: `_sidebar.md`
 - To split a page into multiple sections, use 2<sup>nd</sup> level header `## Heading`
 
 ## About
 
-- Powered by GitHub Pages and [Docsify](https://docsify.js.org).
-- Docs are written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+- Powered by GitHub Pages and [Docsify](https://docsify.js.org)
+- Docs are written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
