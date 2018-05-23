@@ -1,22 +1,24 @@
 ## Beginner: How to contribute
+> Follow additional instructions in **Structure**.
 
-Just edit/add new `.md` files to root via web GitHub. Directly to master branch.
-> Follow additional information from **Structure** instructions.
+Just edit/add new `.md` files to the root in GitHub directly to `master` branch.
 
 ## Advanced: How to contribute
-> for easy preview of changes and live-reload 🤘
+> Follow additional instructions in **Structure**.
 
+For easy preview of changes and live-reload 🤘
 1. Clone repo
-2. Install globally **docsify**: `yarn global add docsify-cli`
+2. Globally install **Docsify**: `yarn global add docsify-cli`
 3. Run from repo folder: `docsify serve ./docs`
 4. Change files and preview docs: `http://localhost:3000`
 
 ## Structure
 
-- Add new pages to root folder only. With project prefix in filename: `native-something.md`.
+- Add new pages to the root folder only. Add project prefix to the filename. eg: `native-something.md`.
 - Each new page has to be added in: `_sidebar.md`.
-- To split page into multiple sections, use 2nd lvl header `## Heading`
+- To split a page into multiple sections, use 2<sup>nd</sup> level header `## Heading`
 
 ## About
-- Project is using GitHub Pages and [Docsify](https://docsify.js.org).
-- Docs are written in Markdown language.
+
+- Powered by GitHub Pages and [Docsify](https://docsify.js.org).
+- Docs are written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
