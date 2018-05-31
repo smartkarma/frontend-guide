@@ -60,8 +60,9 @@ yarn staging-proxy
 
 1. Start a new hotfix branch with the incremented version number as the name
   * Eg: `v1.0.0` to `v1.0.1` [increment the last digit]
-2. Commit the change
-3. Finish the hotfix and [deploy](ember-deploy?id=deploy)
+2. Commit the changes
+3. Update `package.json` version number & commit with `Hotfix vX.X.X`
+4. Finish the hotfix and [deploy](ember-deploy?id=deploy)
 
 ## Release
 
