@@ -51,7 +51,7 @@ yarn staging-proxy
 1. If there's any change in `sk-common`, [make a release](ember-develop?id=create-new-release) in `sk-common` first
 2. Change `sk-common` version number in `package.json`
 3. Run `yarn` to change the `.lock` file
-4. Commit message: `use sk-common vX.X.X`
+4. Commit message: `[pivotal tracker ticker id] use sk-common vX.X.X`
 5. Finish the feature branch. This will **merge** the branch to `develop`
 
 ## Hotfix
