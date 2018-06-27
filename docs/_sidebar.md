@@ -11,6 +11,7 @@
   * [Testing](testing.md)
   * [Deploying](native-deploy.md)
   * [Upgrading](native-upgrading.md)
+  * [Firebase](firebase.md)
 
 * Ember
 
