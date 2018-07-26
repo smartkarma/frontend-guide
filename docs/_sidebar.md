@@ -19,6 +19,7 @@
   * [Develop](ember-develop.md)
   * [Testing](ember-testing.md)
   * [Deploy](ember-deploy.md)
+  * [Font](ember-font-awesome-custom.md)
   * [Resources](ember-resources.md)
 
 * Pull Request
