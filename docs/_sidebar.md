@@ -22,10 +22,17 @@
   * [Font](ember-font-awesome-custom.md)
   * [Resources](ember-resources.md)
 
+* Wordpress
+
+  * [Introduction](wp-intro.md)
+  * [Deploy](wp-deploy.md)
+  * [Update](wp-update.md)
+
 * Pull Request
 
   * [Requirement](pull-request.md)
 
 * Analytics
+  * [BigQuery](big-query.md)
   * [Firebase](firebase-analytics.md)
   * [GA](google-analytics.md)
