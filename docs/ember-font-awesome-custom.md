@@ -1,8 +1,9 @@
 # Font Awesome Custom
 
 ## How to add new icon
+
 1. Go to [icomoon.io](https://icomoon.io/app/#/projects)
-2. Click on **Import Project** and import the latest [Smartkarma - Font Awesome.json](https://drive.google.com/open?id=1l5vpNyoekHp1cugKiCu91b0-rdcNEOQm)
+2. Click on **Import Project** and import the latest [Smartkarma - Font Awesome.json](https://drive.google.com/open?id=1w8e6fX15DOfJcKrUOsza88_cT-WKm0-Z)
 3. Click **Load** to open the project in IcoMoon
 4. Select icons that you want to export
 5. If you want to import your custom SVG icon, click **Import Icons** and select the icon when it's imported to the project
