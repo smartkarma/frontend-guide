@@ -27,6 +27,9 @@
   * [Introduction](wp-intro.md)
   * [Deploy](wp-deploy.md)
   * [Update](wp-update.md)
+  
+* Branding site
+ * [Introduction](branding-intro.md)
 
 * Pull Request
 
@@ -36,3 +39,4 @@
   * [BigQuery](big-query.md)
   * [Firebase](firebase-analytics.md)
   * [GA](google-analytics.md)
+
