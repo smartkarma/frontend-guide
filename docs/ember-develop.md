@@ -103,3 +103,6 @@ Two most common issues:
 ### Deploy failed with auth error
 
 In some cases, you might not have access to `sk-stratus` or `sk-nimbus` servers. Please verify you have access by SSH those servers
+
+### Adding/updating font awesome assets
+After adding/updating font awesome assets, update `librariesRelease` version number in `sk-common/config/environment.js`. If the version number is not updated, the app will still use old asset files
