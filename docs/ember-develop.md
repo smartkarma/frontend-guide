@@ -2,12 +2,12 @@
 
 ## Dependencies
 
-* git
-* nvm
-* yarn
-* bower
-* watchman
-* ember-cli
+* [git](https://git-scm.com/about)
+* [nvm](https://github.com/creationix/nvm)
+* [yarn](https://yarnpkg.com/en/docs/getting-started)
+* [bower](https://bower.io/)
+* [watchman](https://facebook.github.io/watchman/)
+* [ember-cli](https://ember-cli.com/)
 
 ## One time setup
 
