@@ -11,11 +11,19 @@
 
 ## One time setup
 
-1. Make sure you've the following repos cloned: `smartkarma-web`, `sk-foundry`, `sk-common`, `sk-public`
-2. `nvm use` (make sure that you're using the correct node version with `node -v`)
-2. `yarn link` inside `sk-common` folder
-3. `yarn link sk-common` in `smartkarma-web` and `sk-foundry` folders
-4. `yarn && bower install` in all 4 repos
+Make sure you have the following repos cloned: `sk-common`, `smartkarma-web`, `sk-foundry`
+
+### Steps for `sk-common`
+
+1. `nvm use` (make sure that you're using the correct node version with `node -v`)
+2. `yarn link`
+3. `yarn && bower install`
+
+### Steps for `smartkarma-web`, `sk-foundry`
+
+1. `nvm use`
+2. `yarn link sk-common`
+3. `yarn && bower install`
 
 ## Start local server
 
