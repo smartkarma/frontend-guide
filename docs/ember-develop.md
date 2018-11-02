@@ -46,7 +46,11 @@ yarn staging-proxy
   * `146673807-qva-analytics-report`
   * `161645470-peer-tab-text-changes`
   * `160164131-analytics`
-2. If there's any change in `sk-common`, create a new feature in `sk-common` with the same name
+
+2. If there's any change in `sk-common`, create a new feature in `sk-common` with the same name. Examples:
+  * `146673807-qva-analytics-report`
+  * `161645470-peer-tab-text-changes`
+  * `160164131-analytics`
 
 ### Finish feature branch
 
