@@ -21,7 +21,7 @@ The whole Smartkarma Ember ecosystem consists of these projects:
 
 ### [foundry.smartkarma.com](https://foundry.smartkarma.com)
 
-> Platform administration, statistics viewing, content management. **Only internal users have access**
+> Platform administration, statistics viewing, content management. *Only internal users have access*
 
 * Repository: [sk-foundry](https://github.com/smartkarma/sk-foundry)
 * Domains:
@@ -37,9 +37,9 @@ The whole Smartkarma Ember ecosystem consists of these projects:
 
 ### [smartkarma.com/home](https://www.smartkarma.com/home)
 
-> Public/Landing page. For non-logged users, this is the web when they access `smartkarma.com`. For logged-in users, the same page is accessed under `smartkarma.com/home`.
+!> Deprecated in favour of Wordpress
 
-?> This is running/using on Ember Fastboot
+> Public/Landing page. For non-logged users, this is the web when they access `smartkarma.com`. For logged-in users, the same page is accessed under `smartkarma.com/home`
 
 * Repository: [sk-public](https://github.com/smartkarma/sk-public)
 
