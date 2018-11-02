@@ -42,8 +42,10 @@ yarn staging-proxy
 
 ### Start feature
 
-1. Start a feature branch and name it using the following naming convention: `[pivotal tracker ticker id]-[feature name separated with -]`
-  * Eg: `146673807-qva-analytics-report`
+1. Start a feature branch and name it using the following naming convention: `[pivotal tracker ticker id]-[feature name separated with -]`. Examples:
+  * `146673807-qva-analytics-report`
+  * `161645470-peer-tab-text-changes`
+  * `160164131-analytics`
 2. If there's any change in `sk-common`, create a new feature in `sk-common` with the same name
 
 ### Finish feature branch
