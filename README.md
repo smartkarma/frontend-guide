@@ -1,3 +1,5 @@
+### React Native has been moved to Jira Confluence: https://sk-team.atlassian.net/wiki/spaces/PRODUCTTEC/pages/8224784/Mobile+App
+
 ## Beginner: How to contribute
 > Follow additional instructions in **Structure**
 
